@@ -17,6 +17,24 @@ python dataset_process.py
 ## Feature extraction
 After runing dataset_process.py, or directly do feature extraction:
 ```bash
-feature_extract.py
+python feature_extract.py
 ```
-computed feature will be saved in output/temp
+computed feature will be saved in presto-test/output/temp
+
+## Experiment
+After successfully running feature_extract.py, can start a series of tests.
+
+### UMAP
+```bash
+python UMAP.py
+```
+
+### Linear Probing
+```bash
+python linear_probing.py
+```
+
+### Classification
+```bash
+python classification.py
+```

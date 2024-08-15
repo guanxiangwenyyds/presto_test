@@ -11,6 +11,7 @@ In the downloaded package, the test_data/BigEarthNet directory already contains 
 
 ## Data preparation
 The code already contains the processed dataset as well as the labels and this step can be skipped.
+
 If you want to run the code for dataset processing:
 ```bash
 python dataset_process.py

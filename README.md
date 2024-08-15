@@ -1,5 +1,7 @@
 # test presto
 
+The code includes all the processes from the raw data processing to the final experiment for "Feature_Extraction_Testing_Based_on_the_Presto_Model", the dataset used is already present in the package, follow the steps below to run the whole process step by step.
+
 ## Environment Setup
 ```bash
 git clone https://github.com/guanxiangwenyyds/presto-test.git

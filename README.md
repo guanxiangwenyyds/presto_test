@@ -5,6 +5,7 @@
 git clone https://github.com/guanxiangwenyyds/presto-test.git
 cd presto-test
 conda env create -f environment.yml
+conda activate presto_test
 ```
 
 ## Data preparation

@@ -4,6 +4,8 @@ The code includes all the processes from the raw data processing to the final ex
 
 ## List of used resources
 Dataset: I used data from BigEarthNet, at the link https://bigearth.net/
+
+
 Pretrained Model: My approach focuses on testing the feature extraction capabilities of the Presto model, so the model is derived from https://github.com/nasaharvest/presto
 
 ## Environment Setup

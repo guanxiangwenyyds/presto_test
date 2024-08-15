@@ -10,8 +10,8 @@ Pretrained Model: My approach focuses on testing the feature extraction capabili
 
 ## Environment Setup
 ```bash
-git clone https://github.com/guanxiangwenyyds/presto-test.git
-cd presto-test
+git clone https://github.com/guanxiangwenyyds/presto_test.git
+cd presto_test
 conda env create -f environment.yml
 conda activate presto_test
 ```

@@ -21,6 +21,8 @@ from sklearn.metrics import classification_report, fbeta_score
 
 warnings.filterwarnings('ignore')
 
+
+print("loading data... ...")
 # Load the features array from disk
 features_file = 'output/temp/features.npy'  #
 features = np.load(features_file)
@@ -42,9 +44,6 @@ LABELS = get_LABELS(label_path)
 
 X_train = torch.tensor(features, dtype=torch.float32).numpy()
 y_train = torch.tensor(train_data[4].numpy(), dtype=torch.float32).numpy()
-y_train_indices = np.argmax(y_train, axis=1)
-
-
 
 rf_classifier = RandomForestClassifier(
     n_estimators=20,
@@ -58,22 +57,21 @@ rf_classifier = RandomForestClassifier(
     n_jobs=-1
 )
 print("Training random forest classifier... ...")
-rf_classifier.fit(X_train, y_train_indices)
+rf_classifier.fit(X_train, y_train)
 print("Random forest classifier -- Done！！")
 
-X_test = torch.tensor(features_test , dtype=torch.float32).numpy()
+X_test = torch.tensor(features_test, dtype=torch.float32).numpy()
 y_test = torch.tensor(test_data[4].numpy(), dtype=torch.float32).numpy()
-y_test_indices = np.argmax(y_test, axis=1)
 
 y_pred = rf_classifier.predict(X_test)
 
-f1_micro = f1_score(y_test_indices, y_pred, average='micro')
-f1_macro = f1_score(y_test_indices, y_pred, average='macro')
-f1_weighted = f1_score(y_test_indices, y_pred, average='weighted')
+f1_micro = f1_score(y_test, y_pred, average='micro')
+f1_macro = f1_score(y_test, y_pred, average='macro')
+f1_weighted = f1_score(y_test, y_pred, average='weighted')
 
-f2_micro = fbeta_score(y_test_indices, y_pred, beta=2, average='micro')
-f2_macro = fbeta_score(y_test_indices, y_pred, beta=2, average='macro')
-f2_weighted = fbeta_score(y_test_indices, y_pred, beta=2, average='weighted')
+f2_micro = fbeta_score(y_test, y_pred, beta=2, average='micro')
+f2_macro = fbeta_score(y_test, y_pred, beta=2, average='macro')
+f2_weighted = fbeta_score(y_test, y_pred, beta=2, average='weighted')
 
 print("F1 Score (Micro):", f1_micro)
 print("F1 Score (Macro):", f1_macro)
@@ -83,4 +81,4 @@ print("F2 Score (Macro):", f2_macro)
 print("F2 Score (Weighted):", f2_weighted)
 
 print("Classification Report:")
-print(classification_report(y_test_indices, y_pred))
+print(classification_report(y_test, y_pred, target_names=LABELS))

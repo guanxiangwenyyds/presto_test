@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 
 warnings.filterwarnings('ignore')
 
+print("loading data... ...")
 # Load the features array from disk
 features_file = 'output/temp/features.npy'  #
 features = np.load(features_file)

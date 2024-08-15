@@ -17,6 +17,8 @@ from sklearn.metrics import accuracy_score, classification_report, f1_score, pre
 
 warnings.filterwarnings('ignore')
 
+
+print("loading data... ...")
 # Load the features array from disk
 features_file = 'output/temp/features.npy'
 features = np.load(features_file)
@@ -37,8 +39,9 @@ LABELS = get_LABELS(label_path)
 
 
 X_train = torch.tensor(features, dtype=torch.float32)
-X_test = torch.tensor(features_test, dtype=torch.float32)
 y_train = torch.tensor(train_data[4].numpy(), dtype=torch.float32)
+
+X_test = torch.tensor(features_test, dtype=torch.float32)
 y_test = torch.tensor(test_data[4].numpy(), dtype=torch.float32)
 
 

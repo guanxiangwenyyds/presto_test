@@ -39,6 +39,7 @@ After successfully running feature_extract.py, can start a series of tests.
 ```bash
 python UMAP.py
 ```
+This process will take a few minutes, if you want to get the results faster, you can change the value of sample_size in UMAP.py.
 
 ### Linear Probing
 ```bash
